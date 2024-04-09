@@ -14,15 +14,22 @@ public class ColaPrioridad {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       MaxPQ<Integer> cola=new MaxPQ<>(10);
+       MaxPQ<Integer> cola=new MaxPQ<>(3);
        //adicionamos elementos a la cola
        cola.adicionar(2);
         cola.adicionar(5);
-         cola.adicionar(2);
+         cola.adicionar(3);
       
         System.out.println("el elemento maximo es "+cola.maximo());
       
+        while (!cola.isEmpty()) {
+            System.out.print("  "+cola.quitarMax());
+
+        }
+        
+        }
+
                
 }
-}
+
 

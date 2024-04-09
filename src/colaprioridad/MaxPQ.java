@@ -36,7 +36,7 @@ public class MaxPQ <Key extends Comparable<Key>>implements Iterable<Key>{
     }
 //adicionar    
 public void adicionar(Key a){
-fa[actual+1]=a;
+fa[++actual]=a;
     swim(actual);
 
 }
@@ -47,11 +47,14 @@ fa[actual+1]=a;
     
     public Key quitarMax(){
     Key maximo =maximo();
-        exch(1, actual-1);
-        System.out.println("se elimina " + fa[1]);
-        fa[1]=null;
+        exch(1, actual--);
+       
+        fa[actual+1]=null;
         sink(1);
        return maximo;
+    }
+    public boolean isEmpty(){
+    return actual==0;
     }
     
     public void swim(int a){
@@ -69,7 +72,9 @@ fa[actual+1]=a;
    
    public void exch (int i, int j){
  
-    Key t=fa[i];fa[i]=fa[j];fa[j]=t;
+    Key t=fa[i];
+    fa[i]=fa[j];
+    fa[j]=t;
            
     }
     
@@ -87,6 +92,7 @@ fa[actual+1]=a;
             
         }
     }
+   
     
     
     @Override
