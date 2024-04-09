@@ -21,10 +21,12 @@ public class ColaPrioridad {
          cola.adicionar(3);
       
         System.out.println("el elemento maximo es "+cola.maximo());
-      
+        System.out.println("La cola ordenada es ");
         while (!cola.isEmpty()) {
-            System.out.print("  "+cola.quitarMax());
-
+            System.out.print("  "+cola.maximo());
+            cola.quitarMax();
+            
+            
         }
         
         }
